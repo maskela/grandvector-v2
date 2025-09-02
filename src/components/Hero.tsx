@@ -15,7 +15,7 @@ const Hero = () => {
         {/* Logo/Brand */}
         <div className="flex items-center justify-center mb-8">
           <img 
-            src="/assets/logo_vector-v2.svg" 
+            src="/assets/logo_vector-v3.svg" 
             alt="Grand Vector Logo" 
             className="w-10 h-10"
           />
