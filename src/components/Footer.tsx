@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   const footerLinks = {
@@ -27,71 +27,58 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-t from-gray-900/80 to-black border-t border-white/10 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
-      </div>
-      
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-16">
+    <footer className="bg-gradient-to-t from-gray-900 to-black border-t border-gray-800">
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
           {/* Brand Section */}
-          <div className="md:col-span-2 animate-fade-in">
-            <div className="flex items-center mb-8">
+          <div className="md:col-span-2">
+            <div className="flex items-center mb-6">
               <img 
-                src="/assets/logo_vector-v3.svg" 
+                src="/assets/logo_vector-v2.svg" 
                 alt="Grand Vector Logo" 
-                className="w-10 h-10 animate-glow"
+                className="w-8 h-8"
               />
-              <span className="ml-4 text-2xl font-black text-gradient-primary">
+              <span className="ml-3 text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Grand Vector
               </span>
             </div>
             
-            <p className="text-gray-300 mb-8 leading-relaxed font-light text-lg">
+            <p className="text-gray-400 mb-6 leading-relaxed">
               Empowering businesses with AI automation that scales customer engagement, 
               generates infinite leads, and integrates seamlessly across all channels.
             </p>
 
             {/* Contact Info */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-4 text-gray-400 hover:text-blue-400 transition-all duration-300 cursor-pointer hover:scale-105">
-                <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-2 rounded-lg">
-                  <Mail className="w-4 h-4 text-white" />
-                </div>
-                <span className="font-medium">hello@grandvector.ai</span>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition-colors">
+                <Mail className="w-4 h-4" />
+                <span>hello@grandvector.ai</span>
               </div>
-              <div className="flex items-center gap-4 text-gray-400 hover:text-blue-400 transition-all duration-300 cursor-pointer hover:scale-105">
-                <div className="bg-gradient-to-r from-green-500 to-emerald-500 p-2 rounded-lg">
-                  <Phone className="w-4 h-4 text-white" />
-                </div>
-                <span className="font-medium">+1 (555) 123-4567</span>
+              <div className="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition-colors">
+                <Phone className="w-4 h-4" />
+                <span>+1 (555) 123-4567</span>
               </div>
-              <div className="flex items-center gap-4 text-gray-400 hover:text-blue-400 transition-all duration-300 cursor-pointer hover:scale-105">
-                <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 rounded-lg">
-                  <MapPin className="w-4 h-4 text-white" />
-                </div>
-                <span className="font-medium">San Francisco, CA</span>
+              <div className="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition-colors">
+                <MapPin className="w-4 h-4" />
+                <span>San Francisco, CA</span>
               </div>
             </div>
           </div>
 
           {/* Links Sections */}
           {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category} className="animate-fade-in" style={{ animationDelay: `${Object.keys(footerLinks).indexOf(category) * 0.1}s` }}>
-              <h4 className="text-xl font-bold mb-6 text-white">
+            <div key={category}>
+              <h4 className="text-lg font-semibold mb-4 text-white">
                 {category}
               </h4>
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 {links.map((link, index) => (
                   <li key={index}>
                     <a
                       href="#"
-                      className="text-gray-400 hover:text-blue-400 transition-all duration-300 font-medium hover:translate-x-1 inline-flex items-center gap-2 group"
+                      className="text-gray-400 hover:text-blue-400 transition-colors duration-300 text-sm"
                     >
                       {link}
-                      <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-all duration-300" />
                     </a>
                   </li>
                 ))}
@@ -101,18 +88,18 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-white/10 mt-16 pt-10 flex flex-col md:flex-row justify-between items-center animate-fade-in">
-          <div className="text-gray-400 font-medium">
+        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <div className="text-gray-400 text-sm">
             © 2025 Grand Vector. All rights reserved.
           </div>
-          <div className="flex gap-8 mt-6 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-blue-400 font-medium transition-all duration-300 hover:scale-105">
+          <div className="flex gap-6 mt-4 md:mt-0">
+            <a href="#" className="text-gray-400 hover:text-blue-400 text-sm transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-gray-400 hover:text-blue-400 font-medium transition-all duration-300 hover:scale-105">
+            <a href="#" className="text-gray-400 hover:text-blue-400 text-sm transition-colors">
               Terms of Service
             </a>
-            <a href="#" className="text-gray-400 hover:text-blue-400 font-medium transition-all duration-300 hover:scale-105">
+            <a href="#" className="text-gray-400 hover:text-blue-400 text-sm transition-colors">
               Cookie Policy
             </a>
           </div>
