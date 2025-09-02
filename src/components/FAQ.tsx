@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, Sparkles } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -32,55 +32,44 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-32 bg-gradient-to-b from-gray-900/50 via-black to-gray-900/50 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-float-delayed"></div>
-      </div>
-      
+    <section className="py-24 bg-gradient-to-b from-gray-900 to-black">
       <div className="max-w-4xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-20 animate-slide-up">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 rounded-full px-6 py-3 mb-8">
-            <Sparkles className="w-4 h-4 text-blue-400" />
-            <span className="text-blue-400 font-semibold">FAQ</span>
-          </div>
-          <h2 className="text-5xl md:text-6xl font-black mb-8 leading-tight">
-            Frequently Asked <span className="text-gradient-primary">Questions</span>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Frequently Asked <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Questions</span>
           </h2>
-          <p className="text-2xl text-gray-300 font-light">
+          <p className="text-xl text-gray-300">
             Everything you need to know about AI automation and our services
           </p>
         </div>
 
         {/* FAQ Accordion */}
-        <div className="space-y-6">
+        <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="glass-effect border border-white/20 rounded-2xl overflow-hidden transition-all duration-500 hover:border-blue-400/50 hover:shadow-xl hover:shadow-blue-500/10 animate-scale-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="bg-gray-900/50 border border-gray-800 rounded-2xl overflow-hidden transition-all duration-300 hover:border-gray-600"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-8 py-8 text-left flex justify-between items-center hover:bg-white/10 transition-all duration-500 group"
+                className="w-full px-6 py-6 text-left flex justify-between items-center hover:bg-gray-800/50 transition-colors duration-300"
               >
-                <span className="text-xl font-bold pr-4 group-hover:text-blue-400 transition-colors duration-300">{faq.question}</span>
+                <span className="text-lg font-semibold pr-4">{faq.question}</span>
                 <ChevronDown
-                  className={`w-6 h-6 text-blue-400 transition-transform duration-500 ${
+                  className={`w-5 h-5 text-blue-400 transition-transform duration-300 ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                 />
               </button>
               
               <div
-                className={`overflow-hidden transition-all duration-700 ${
+                className={`overflow-hidden transition-all duration-500 ${
                   openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
-                <div className="px-8 pb-8">
-                  <p className="text-gray-300 leading-relaxed text-lg font-light">
+                <div className="px-6 pb-6">
+                  <p className="text-gray-300 leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>
