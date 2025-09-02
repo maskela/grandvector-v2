@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   const footerLinks = {
@@ -33,9 +33,11 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="md:col-span-2">
             <div className="flex items-center mb-6">
-              <div className="bg-gradient-to-r from-blue-400 to-purple-500 p-2 rounded-lg">
-                <Zap className="w-6 h-6 text-white" />
-              </div>
+              <img 
+                src="/assets/logo_vector-v2.svg" 
+                alt="Grand Vector Logo" 
+                className="w-8 h-8"
+              />
               <span className="ml-3 text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Grand Vector
               </span>

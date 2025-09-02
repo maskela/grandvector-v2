@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Play, Zap } from 'lucide-react';
+import { ArrowRight, Play } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -14,9 +14,11 @@ const Hero = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         {/* Logo/Brand */}
         <div className="flex items-center justify-center mb-8">
-          <div className="bg-gradient-to-r from-blue-400 to-purple-500 p-3 rounded-xl">
-            <Zap className="w-8 h-8 text-white" />
-          </div>
+          <img 
+            src="/assets/logo_vector-v2.svg" 
+            alt="Grand Vector Logo" 
+            className="w-10 h-10"
+          />
           <span className="ml-3 text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
             Grand Vector
           </span>
